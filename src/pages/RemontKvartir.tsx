@@ -71,6 +71,10 @@ const photos = [
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b4108273-addd-46f6-82a3-0b9c9e2a44e2.jpg",
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/8f9ebb34-e43a-4a6c-ab63-c59ad6daf795.jpg",
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b04edae9-b5f5-49cb-820c-b68ac7d2d3c9.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/0db0bf3e-54fa-4908-a1c6-781b5a506025.png",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/1d6f2eef-6588-4685-ba10-38c81f1731c6.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ee4a785e-093e-466a-952a-647407a21de9.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/879de337-9ed5-4414-82e6-90f4fcd3ebcd.jpg",
 ]
 
 function Lightbox({ photos, startIndex, onClose }: { photos: string[]; startIndex: number; onClose: () => void }) {
