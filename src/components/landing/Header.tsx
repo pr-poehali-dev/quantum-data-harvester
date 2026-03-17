@@ -6,6 +6,7 @@ import Icon from "@/components/ui/icon"
 
 const serviceLinks = [
   { href: "/raznorabochie", label: "Разнорабочие", icon: "Hammer" },
+  { href: "/gruzchiki", label: "Грузчики", icon: "Package" },
 ]
 
 export default function Header() {
