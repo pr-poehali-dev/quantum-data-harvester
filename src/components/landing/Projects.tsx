@@ -23,7 +23,13 @@ const projects = [
     slug: "banya-pod-kluch",
     title: "Баня под ключ",
     shortDescription: "Строительство и отделка бани из бруса 6х4м: фундамент, сруб, кровля, внутренняя отделка",
-    photos: ["/portfolio-images/ecommerce-interface-1.jpg"],
+    photos: [
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/9ce92263-cc10-4dbf-b2d0-28056a3617e2.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/8c6132ee-a556-49c6-b5ee-765bf3b7eabb.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/51593b07-3afd-4b74-a000-3fd46ebfa021.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/f4321e5d-2b10-4bde-a70e-fac4e9d940e9.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/37138b17-7933-4e93-a09a-d7cf5d44920b.jpg",
+    ],
   },
   {
     id: 3,
