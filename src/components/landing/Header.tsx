@@ -10,6 +10,7 @@ const serviceLinks = [
   { href: "/remont-kvartir", label: "Ремонт квартир", icon: "PaintBucket" },
   { href: "/elektrika", label: "Электрика", icon: "Zap" },
   { href: "/master-na-chas", label: "Мастер на час", icon: "Clock" },
+  { href: "/sborka-mebeli", label: "Сборка мебели", icon: "Wrench" },
 ]
 
 export default function Header() {
