@@ -66,12 +66,11 @@ const faq = [
 ]
 
 const photos = [
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/24034cd6-702a-41d4-ab66-ab1702716b23.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/20ce469e-0a18-46a4-a288-ea5d00082691.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/6a6095b4-58ee-4697-84e4-183a81a1b406.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/49a4b6ed-0f66-433d-85dd-d1aeceeb0af6.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c311ae41-2550-4b1b-9ed5-467c8972f5a3.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a09e22ce-c55a-40f1-93ab-0443112249b7.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ec9cb240-fe3f-4db7-9f47-0f3b4611f5bc.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/7ff5c1dd-888f-4424-bda0-3e14aabced6b.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b4108273-addd-46f6-82a3-0b9c9e2a44e2.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/8f9ebb34-e43a-4a6c-ab63-c59ad6daf795.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b04edae9-b5f5-49cb-820c-b68ac7d2d3c9.jpg",
 ]
 
 function Lightbox({ photos, startIndex, onClose }: { photos: string[]; startIndex: number; onClose: () => void }) {
