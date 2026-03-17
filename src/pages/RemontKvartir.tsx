@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
@@ -65,17 +65,108 @@ const faq = [
   { q: "Убираете ли вы мусор после ремонта?", a: "Да, вывоз строительного мусора включён в стоимость всех видов комплексного ремонта и ремонта под ключ." },
 ]
 
-const photos = [
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ec9cb240-fe3f-4db7-9f47-0f3b4611f5bc.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/7ff5c1dd-888f-4424-bda0-3e14aabced6b.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b4108273-addd-46f6-82a3-0b9c9e2a44e2.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/8f9ebb34-e43a-4a6c-ab63-c59ad6daf795.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b04edae9-b5f5-49cb-820c-b68ac7d2d3c9.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/0db0bf3e-54fa-4908-a1c6-781b5a506025.png",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/1d6f2eef-6588-4685-ba10-38c81f1731c6.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ee4a785e-093e-466a-952a-647407a21de9.jpg",
-  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/879de337-9ed5-4414-82e6-90f4fcd3ebcd.jpg",
+const projects = [
+  {
+    title: "Ремонт студии 24 м²",
+    desc: "Комплексный ремонт в новостройке: выравнивание стен, укладка ламината, покраска, сантехника",
+    area: "24 м²",
+    type: "Комплексный",
+    photos: [
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ec9cb240-fe3f-4db7-9f47-0f3b4611f5bc.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/7ff5c1dd-888f-4424-bda0-3e14aabced6b.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b4108273-addd-46f6-82a3-0b9c9e2a44e2.jpg",
+    ],
+  },
+  {
+    title: "Однокомнатная в хрущёвке 30 м²",
+    desc: "Ремонт под ключ: демонтаж, новая планировка, полный цикл отделки с материалами",
+    area: "30 м²",
+    type: "Под ключ",
+    photos: [
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/8f9ebb34-e43a-4a6c-ab63-c59ad6daf795.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/b04edae9-b5f5-49cb-820c-b68ac7d2d3c9.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/0db0bf3e-54fa-4908-a1c6-781b5a506025.png",
+    ],
+  },
+  {
+    title: "Ванная комната в сталинке",
+    desc: "Полный ремонт ванной: плитка, замена труб и сантехники, вентиляция, натяжной потолок",
+    area: "4.5 м²",
+    type: "Комплексный",
+    photos: [
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/1d6f2eef-6588-4685-ba10-38c81f1731c6.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/ee4a785e-093e-466a-952a-647407a21de9.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/879de337-9ed5-4414-82e6-90f4fcd3ebcd.jpg",
+    ],
+  },
 ]
+
+function ProjectCard({ project, onPhotoClick }: { project: typeof projects[0]; onPhotoClick: (photos: string[], index: number) => void }) {
+  const [current, setCurrent] = useState(0)
+  const touchStartX = useRef<number | null>(null)
+
+  const prev = (e: React.MouseEvent) => { e.stopPropagation(); setCurrent((c) => (c - 1 + project.photos.length) % project.photos.length) }
+  const next = (e: React.MouseEvent) => { e.stopPropagation(); setCurrent((c) => (c + 1) % project.photos.length) }
+
+  return (
+    <div className="card shadow-md overflow-hidden flex flex-col">
+      <div
+        className="relative overflow-hidden aspect-[4/3] cursor-zoom-in"
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+        onTouchEnd={(e) => {
+          if (touchStartX.current === null) return
+          const diff = touchStartX.current - e.changedTouches[0].clientX
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) setCurrent((c) => (c + 1) % project.photos.length)
+            else setCurrent((c) => (c - 1 + project.photos.length) % project.photos.length)
+          }
+          touchStartX.current = null
+        }}
+        onClick={() => onPhotoClick(project.photos, current)}
+      >
+        {project.photos.map((photo, i) => (
+          <img
+            key={i}
+            src={photo}
+            alt={`${project.title} — фото ${i + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === current ? "opacity-100" : "opacity-0"}`}
+          />
+        ))}
+        <button
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#7A7FEE] text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 z-10"
+          onClick={prev}
+          aria-label="Предыдущее фото"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#7A7FEE] text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 z-10"
+          onClick={next}
+          aria-label="Следующее фото"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+          {project.photos.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => { e.stopPropagation(); setCurrent(i) }}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${i === current ? "bg-white scale-110" : "bg-white/50"}`}
+            />
+          ))}
+        </div>
+        <div className="absolute top-3 right-3 bg-[#7A7FEE] text-white text-xs font-semibold px-2 py-1 rounded-full z-10">{project.type}</div>
+      </div>
+      <div className="p-5 flex flex-col gap-2">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold text-black dark:text-white text-base">{project.title}</h3>
+          <span className="text-xs text-gray-500 dark:text-gray-400 shrink-0 ml-2">{project.area}</span>
+        </div>
+        <p className="text-sm text-gray-700 dark:text-gray-300">{project.desc}</p>
+      </div>
+    </div>
+  )
+}
 
 function Lightbox({ photos, startIndex, onClose }: { photos: string[]; startIndex: number; onClose: () => void }) {
   const [current, setCurrent] = useState(startIndex)
@@ -99,7 +190,7 @@ function Lightbox({ photos, startIndex, onClose }: { photos: string[]; startInde
 }
 
 export default function RemontKvartir() {
-  const [lightbox, setLightbox] = useState<{ index: number } | null>(null)
+  const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null)
 
   useEffect(() => {
     document.title = "Ремонт квартир в Иркутске под ключ — от 1 500 ₽/м² | МастерОФФ"
@@ -252,16 +343,18 @@ export default function RemontKvartir() {
         <section className="my-20">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
             Наши
-            <span className="block text-[#7A7FEE]">работы</span>
+            <span className="block text-[#7A7FEE]">проекты</span>
           </h2>
           <p className="mb-12 max-w-2xl text-gray-700 dark:text-gray-300">
             Реальные фото выполненных ремонтов квартир в Иркутске нашими мастерами.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {photos.map((photo, i) => (
-              <div key={i} className="overflow-hidden rounded-xl cursor-pointer" onClick={() => setLightbox({ index: i })}>
-                <img src={photo} alt={`Ремонт квартиры ${i + 1}`} className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300" />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                onPhotoClick={(photos, index) => setLightbox({ photos, index })}
+              />
             ))}
           </div>
         </section>
@@ -367,7 +460,7 @@ export default function RemontKvartir() {
       <TelegramFloat />
 
       {lightbox && (
-        <Lightbox photos={photos} startIndex={lightbox.index} onClose={() => setLightbox(null)} />
+        <Lightbox photos={lightbox.photos} startIndex={lightbox.index} onClose={() => setLightbox(null)} />
       )}
     </main>
   )
