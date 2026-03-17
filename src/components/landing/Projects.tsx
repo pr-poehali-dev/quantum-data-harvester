@@ -7,6 +7,7 @@ const kvartiraPhotos = [
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/6a6095b4-58ee-4697-84e4-183a81a1b406.jpg",
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/49a4b6ed-0f66-433d-85dd-d1aeceeb0af6.jpg",
   "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c311ae41-2550-4b1b-9ed5-467c8972f5a3.jpg",
+  "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a09e22ce-c55a-40f1-93ab-0443112249b7.jpg",
 ]
 
 const projects = [
