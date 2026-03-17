@@ -5,6 +5,7 @@ import Services from "./Services"
 import Faq from "./Faq"
 import CallToAction from "./CallToAction"
 import Footer from "./Footer"
+import TelegramFloat from "./TelegramFloat"
 import type { LandingPageProps } from "./types"
 
 export { Header, Hero, Projects, Services, Faq, CallToAction, Footer }
@@ -21,6 +22,7 @@ export default function LandingPage({ showHeader = true, showFooter = true }: La
         <CallToAction />
       </div>
       {showFooter && <Footer />}
+      <TelegramFloat />
     </main>
   )
 }
