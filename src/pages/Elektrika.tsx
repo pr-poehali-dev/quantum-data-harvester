@@ -437,6 +437,30 @@ export default function Elektrika() {
           </div>
         </section>
 
+        {/* Portfolio */}
+        <section className="my-20">
+          <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+            Наши
+            <span className="block text-[#7A7FEE]">работы</span>
+          </h2>
+          <p className="mb-12 max-w-2xl text-gray-700 dark:text-gray-300">
+            Реальные объекты — квартиры, дома, офисы. Работаем аккуратно и по стандартам.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/9c1159a6-5b7e-46de-908c-90e6ebacac65.jpg", alt: "Монтаж электрощита в новостройке" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a29dc5ee-f14f-4c76-b4aa-7b28c47869ad.jpg", alt: "Электрощит в деревянном доме" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2bce9aad-4e50-49e4-b659-989174449391.jpg", alt: "Разводка кабеля по стенам" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/073a0426-ef2d-46c8-8225-9fb089fd9e02.jpg", alt: "Прокладка кабеля в полу" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c8280f82-329b-49a7-be9b-2d012537a73a.jpg", alt: "Сборка силового щита" },
+            ].map((photo, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md">
+                <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="my-20">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
