@@ -15,11 +15,11 @@ const tasks = [
   { icon: "Wrench", title: "Разные поручения", desc: "Любые физические работы по вашему заданию" },
 ]
 
-const steps = [
-  { num: "01", title: "Позвоните или напишите", desc: "Опишите задачу — уточним объём и время" },
-  { num: "02", title: "Приедем в удобное время", desc: "Мастер прибывает в согласованный час" },
-  { num: "03", title: "Выполним работу", desc: "Быстро, аккуратно, без лишних вопросов" },
-  { num: "04", title: "Оплата по факту", desc: "Платите только за отработанные часы" },
+const faq = [
+  { q: "Сколько стоят услуги разнорабочих?", a: "500 рублей в час. Минимальный заказ — 4 часа (2 000 ₽)." },
+  { q: "Как быстро приедет мастер?", a: "В большинстве случаев — в день обращения. Позвоните или напишите в Telegram, и мы согласуем удобное время." },
+  { q: "Какие задачи вы выполняете?", a: "Любые физические работы: погрузка, вывоз мусора, сборка мебели, демонтаж, земляные работы, уборка территории и многое другое." },
+  { q: "Нужно ли платить заранее?", a: "Нет. Оплата только после выполнения работы — за фактически отработанные часы." },
 ]
 
 export default function Raznorabochie() {
@@ -44,7 +44,6 @@ export default function Raznorabochie() {
     setOg("og:description", "Услуги разнорабочих от 500 руб/час. Минимальный заказ 4 часа. Приедем в удобное время по всему Иркутску.")
     setOg("og:type", "website")
 
-    // Schema.org LocalBusiness
     const schema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -65,117 +64,160 @@ export default function Raznorabochie() {
     }
     schemaEl.textContent = JSON.stringify(schema)
 
-    return () => {
-      document.getElementById("schema-raznorabochie")?.remove()
-    }
+    return () => { document.getElementById("schema-raznorabochie")?.remove() }
   }, [])
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#111111]">
       <Header />
+      <div className="container pt-4">
 
-      {/* Hero */}
-      <section className="container pt-12 pb-16">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-[#7A7FEE]/10 text-[#7A7FEE] text-sm font-medium px-3 py-1.5 rounded-full mb-6">
-            <Icon name="Users" size={14} />
-            Иркутск · выезд от 4 часов
-          </div>
-          <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6">
-            Разнорабочие<br />
-            <span className="text-[#7A7FEE]">в Иркутске</span>
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-xl">
-            Выполним любую физическую работу быстро и без лишних вопросов. Приедем в удобное время.
-          </p>
-
-          {/* Цена */}
-          <div className="card p-6 inline-flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-8">
-            <div>
-              <div className="text-4xl font-bold text-[#7A7FEE]">500 ₽</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">за час работы</div>
-            </div>
-            <div className="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden sm:block" />
-            <div>
-              <div className="text-lg font-semibold text-black dark:text-white">от 2 000 ₽</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">минимальный заказ (4 часа)</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="tel:+79086461687" className="btn-primary inline-flex items-center gap-2">
-              <Icon name="Phone" size={16} />
-              +7 (908) 646-16-87
-            </a>
-            <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
-              <Icon name="Send" size={16} />
-              Написать в Telegram
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Виды работ */}
-      <section className="container py-16 border-t border-gray-100 dark:border-gray-800">
-        <h2 className="text-black dark:text-white text-3xl md:text-4xl font-medium mb-4">
-          Что мы
-          <span className="block text-[#7A7FEE]">делаем</span>
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-xl">
-          Беремся за любые задачи, где нужны руки и физическая сила.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {tasks.map((task) => (
-            <div key={task.title} className="card p-5 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-full bg-[#7A7FEE]/10 flex items-center justify-center mb-4">
-                <Icon name={task.icon} size={20} className="text-[#7A7FEE]" />
+        {/* Hero — как на главной */}
+        <section className="card my-8 relative overflow-hidden shadow-md">
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
+            <div className="w-full md:w-3/5 z-10">
+              <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+                Разнорабочие
+                <span className="block text-[#7A7FEE]">в Иркутске</span>
+              </h1>
+              <p className="my-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
+                Выполним любую физическую работу быстро и без лишних вопросов. 500 ₽/час, минимум 4 часа. Приедем в удобное время.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <a href="tel:+79086461687" className="btn-primary inline-flex items-center gap-2">
+                  <Icon name="Phone" size={16} />
+                  +7 (908) 646-16-87
+                </a>
+                <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="btn-secondary text-black dark:text-white inline-flex items-center gap-2">
+                  <Icon name="Send" size={16} />
+                  Написать в Telegram
+                </a>
               </div>
-              <h3 className="font-semibold text-black dark:text-white mb-1">{task.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{task.desc}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Как работаем */}
-      <section className="container py-16 border-t border-gray-100 dark:border-gray-800">
-        <h2 className="text-black dark:text-white text-3xl md:text-4xl font-medium mb-10">
-          Как мы
-          <span className="block text-[#7A7FEE]">работаем</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step) => (
-            <div key={step.num} className="flex flex-col">
-              <div className="text-5xl font-bold text-[#7A7FEE]/20 mb-3">{step.num}</div>
-              <h3 className="font-semibold text-black dark:text-white mb-1">{step.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{step.desc}</p>
+            <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
+              <img
+                src="/purple-circle-wave-static.png"
+                alt="Purple Wave"
+                className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
+              />
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="container py-16">
-        <div className="card p-8 md:p-12 text-center">
-          <h2 className="text-black dark:text-white text-3xl md:text-4xl font-medium mb-4">
-            Нужны разнорабочие <span className="text-[#7A7FEE]">сегодня?</span>
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
-            Позвоните или напишите — согласуем время и приедем в удобный для вас час.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+79086461687" className="btn-primary inline-flex items-center justify-center gap-2">
-              <Icon name="Phone" size={16} />
-              Позвонить
-            </a>
-            <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center justify-center gap-2">
-              <Icon name="Send" size={16} />
-              Telegram
-            </a>
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* Что делаем — как блок услуг на главной */}
+        <section className="my-20">
+          <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+            Что мы
+            <span className="block text-[#7A7FEE]">делаем</span>
+          </h2>
+          <p className="mb-12 max-w-2xl text-gray-700 dark:text-gray-300">
+            Берёмся за любые задачи, где нужны руки и физическая сила. Работаем быстро, аккуратно и с уважением к вашему имуществу.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tasks.map((task) => (
+              <div key={task.title} className="card p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="bg-[#7A7FEE] w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm">
+                  <Icon name={task.icon} className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{task.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">{task.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Стоимость */}
+        <section className="my-20">
+          <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+            Стоимость
+            <span className="block text-[#7A7FEE]">услуг</span>
+          </h2>
+          <p className="mb-12 max-w-2xl text-gray-700 dark:text-gray-300">
+            Простая почасовая оплата — платите только за отработанное время.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-8 shadow-md flex flex-col gap-3">
+              <div className="text-4xl font-bold text-[#7A7FEE]">2 000 ₽</div>
+              <div className="text-xl font-semibold text-black dark:text-white">4 часа</div>
+              <p className="text-gray-700 dark:text-gray-300 text-sm flex-1">Минимальный заказ. Подойдёт для сборки мебели, мелкого ремонта, небольшой перевозки.</p>
+              <a href="tel:+79086461687" className="btn-primary inline-flex items-center justify-center gap-2 mt-2">
+                <Icon name="Phone" size={16} /> Заказать
+              </a>
+            </div>
+            <div className="card p-8 shadow-md border-2 border-[#7A7FEE] flex flex-col gap-3 relative">
+              <div className="absolute -top-3 left-6 bg-[#7A7FEE] text-white text-xs font-semibold px-3 py-1 rounded-full">Популярно</div>
+              <div className="text-4xl font-bold text-[#7A7FEE]">4 000 ₽</div>
+              <div className="text-xl font-semibold text-black dark:text-white">8 часов</div>
+              <p className="text-gray-700 dark:text-gray-300 text-sm flex-1">Полный рабочий день. Успеем сделать переезд, разобрать и собрать мебель, вывезти мусор.</p>
+              <a href="tel:+79086461687" className="btn-primary inline-flex items-center justify-center gap-2 mt-2">
+                <Icon name="Phone" size={16} /> Заказать
+              </a>
+            </div>
+            <div className="card p-8 shadow-md flex flex-col gap-3">
+              <div className="text-4xl font-bold text-[#7A7FEE]">500 ₽</div>
+              <div className="text-xl font-semibold text-black dark:text-white">за час</div>
+              <p className="text-gray-700 dark:text-gray-300 text-sm flex-1">Крупные объекты или постоянное сотрудничество — обсудим индивидуальные условия.</p>
+              <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center justify-center gap-2 mt-2">
+                <Icon name="Send" size={16} /> Обсудить
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ — как на главной */}
+        <section className="my-20">
+          <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+            Частые
+            <span className="block text-[#7A7FEE]">вопросы</span>
+          </h2>
+          <p className="mb-12 max-w-2xl text-gray-700 dark:text-gray-300">
+            Отвечаем на самые популярные вопросы о работе разнорабочих МастерОФФ.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {faq.map((item) => (
+              <div key={item.q} className="card p-6 shadow-md">
+                <h3 className="font-semibold text-black dark:text-white mb-2">{item.q}</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA — как на главной */}
+        <section id="contact" className="card my-20 relative overflow-hidden shadow-md">
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
+            <div className="w-full md:w-3/5 z-10">
+              <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+                Нужен разнорабочий? <span className="text-[#7A7FEE]">Звоните</span> прямо сейчас
+              </h2>
+              <p className="my-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
+                Работаем по всему Иркутску. Выезд мастера — в день обращения.
+              </p>
+              <p className="mb-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
+                Перезвоним в течение 15 минут и согласуем удобное время.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <a href="tel:+79086461687" className="btn-primary inline-flex items-center gap-2">
+                  <Icon name="Phone" size={16} />
+                  +7 (908) 646-16-87
+                </a>
+                <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
+                  <Icon name="Send" size={16} />
+                  Написать в Telegram
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
+              <img
+                src="/purple-circle-wave-static.png"
+                alt="Purple Wave"
+                className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
+              />
+            </div>
+          </div>
+        </section>
+
+      </div>
       <Footer />
       <TelegramFloat />
     </main>

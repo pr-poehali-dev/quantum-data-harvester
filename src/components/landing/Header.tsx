@@ -6,11 +6,6 @@ import Icon from "@/components/ui/icon"
 
 const serviceLinks = [
   { href: "/raznorabochie", label: "Разнорабочие", icon: "Hammer" },
-  { href: "/#services", label: "Отделка квартир", icon: "PaintBucket" },
-  { href: "/#services", label: "Отделка домов", icon: "Home" },
-  { href: "/#services", label: "Строительство бань", icon: "Flame" },
-  { href: "/#services", label: "Электрика", icon: "Zap" },
-  { href: "/#services", label: "Сантехника", icon: "Droplets" },
 ]
 
 export default function Header() {
