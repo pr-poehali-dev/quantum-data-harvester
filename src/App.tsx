@@ -10,6 +10,7 @@ import Raznorabochie from "./pages/Raznorabochie"
 import Gruzchiki from "./pages/Gruzchiki"
 import RemontKvartir from "./pages/RemontKvartir"
 import Elektrika from "./pages/Elektrika"
+import MasterNaChas from "./pages/MasterNaChas"
 
 const queryClient = new QueryClient()
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/gruzchiki" element={<Gruzchiki />} />
             <Route path="/remont-kvartir" element={<RemontKvartir />} />
             <Route path="/elektrika" element={<Elektrika />} />
+            <Route path="/master-na-chas" element={<MasterNaChas />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
