@@ -1,4 +1,4 @@
-import ContactFormButton from "./ContactFormButton"
+import Icon from "@/components/ui/icon"
 
 export default function CallToAction() {
   return (
@@ -17,16 +17,18 @@ export default function CallToAction() {
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             <a
               href="tel:+79086461687"
-              className="btn-primary"
+              className="btn-primary inline-flex items-center gap-2"
             >
+              <Icon name="Phone" size={16} />
               +7 (908) 646-16-87
             </a>
             <a
               href="https://t.me/masteroff38"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary"
+              className="btn-secondary inline-flex items-center gap-2"
             >
+              <Icon name="Send" size={16} />
               Написать в Telegram
             </a>
           </div>

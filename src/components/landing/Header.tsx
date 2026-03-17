@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import ThemeToggle from "./ThemeToggle"
 import { useTheme } from "next-themes"
+import Icon from "@/components/ui/icon"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -46,8 +47,9 @@ export default function Header() {
             <div className="flex items-center space-x-4">
               <a
                 href="tel:+79086461687"
-                className="hidden md:block text-sm font-medium text-black dark:text-white hover:text-[#7A7FEE] transition-colors"
+                className="hidden md:flex items-center gap-1.5 text-sm font-medium text-black dark:text-white hover:text-[#7A7FEE] transition-colors"
               >
+                <Icon name="Phone" size={15} />
                 +7 (908) 646-16-87
               </a>
 
