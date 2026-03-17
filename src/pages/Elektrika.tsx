@@ -453,6 +453,10 @@ export default function Elektrika() {
               { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2bce9aad-4e50-49e4-b659-989174449391.jpg", alt: "Разводка кабеля по стенам", label: "Разводка кабеля", desc: "Коммерческое помещение, офис" },
               { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/073a0426-ef2d-46c8-8225-9fb089fd9e02.jpg", alt: "Прокладка кабеля в полу", label: "Прокладка в полу", desc: "Квартира в новостройке под ключ" },
               { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c8280f82-329b-49a7-be9b-2d012537a73a.jpg", alt: "Сборка силового щита", label: "Силовой щит", desc: "Производственный объект" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/6756d08d-415e-4266-8e09-ec64f6c03cd0.jpg", alt: "Монтаж кабельных лотков на потолке", label: "Кабельные лотки", desc: "Офисное здание, реконструкция" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2812c0b4-b5e3-44bb-89ca-fe18cdc2a0f1.jpg", alt: "Разводка кабеля по полу в частном доме", label: "Разводка по полу", desc: "Частный дом, газобетон" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/85e810ce-0a8e-4eb1-b7f9-30c87e4efee2.jpg", alt: "Прокладка кабеля в новостройке", label: "Монтаж проводки", desc: "Новостройка, черновой этап" },
+              { src: "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/835c5fb5-ba7f-4c53-929c-75d823dbc620.jpg", alt: "Установка электрощита в кирпичной стене", label: "Щит АВВ", desc: "Вторичное жильё, замена проводки" },
             ].map((photo, i) => (
               <div key={i} className="rounded-2xl overflow-hidden shadow-md group">
                 <div className="aspect-[4/3] overflow-hidden">
