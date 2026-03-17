@@ -14,8 +14,21 @@ export default function CallToAction() {
           <p className="mb-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
             Оставьте заявку — перезвоним в течение 15 минут и согласуем удобное время.
           </p>
-          <div>
-            <ContactFormButton />
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <a
+              href="tel:+79086461687"
+              className="btn-primary"
+            >
+              +7 (908) 646-16-87
+            </a>
+            <a
+              href="https://t.me/masteroff38"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Написать в Telegram
+            </a>
           </div>
         </div>
 

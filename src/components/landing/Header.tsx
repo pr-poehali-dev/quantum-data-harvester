@@ -44,7 +44,14 @@ export default function Header() {
             </a>
 
             <div className="flex items-center space-x-4">
-              <nav className="hidden md:block">
+              <a
+                href="tel:+79086461687"
+                className="hidden md:block text-sm font-medium text-black dark:text-white hover:text-[#7A7FEE] transition-colors"
+              >
+                +7 (908) 646-16-87
+              </a>
+
+            <nav className="hidden md:block">
                 <ul className="flex space-x-6">
                   <li>
                     <a

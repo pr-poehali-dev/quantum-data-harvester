@@ -21,6 +21,20 @@ export default function Footer() {
           Сервис проверенных мастеров в Иркутске. Ремонт, отделка, строительство бань, электрика и сантехника.
         </p>
 
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6 text-sm">
+          <a href="tel:+79086461687" className="text-gray-700 dark:text-gray-300 hover:text-[#7A7FEE] transition-colors">
+            +7 (908) 646-16-87
+          </a>
+          <span className="hidden sm:block text-gray-400">·</span>
+          <a href="mailto:masteroff38@mail.ru" className="text-gray-700 dark:text-gray-300 hover:text-[#7A7FEE] transition-colors">
+            masteroff38@mail.ru
+          </a>
+          <span className="hidden sm:block text-gray-400">·</span>
+          <a href="https://t.me/masteroff38" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#7A7FEE] transition-colors">
+            Telegram @masteroff38
+          </a>
+        </div>
+
         <p className="text-sm text-gray-500 dark:text-gray-400">
           {new Date().getFullYear()} МАСТЕРОФФ. Все права защищены.
         </p>
