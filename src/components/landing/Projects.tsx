@@ -30,7 +30,13 @@ const projects = [
     slug: "otdelka-doma",
     title: "Отделка частного дома",
     shortDescription: "Внешняя и внутренняя отделка дома 120 кв.м: фасад, утепление, чистовая отделка",
-    photos: ["/portfolio-images/ai-platform-1.jpg"],
+    photos: [
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/cb98d7df-08ce-4c49-9cfa-7e4b4892920b.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/582298e3-6946-4a82-8e6e-2696a9012c74.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/e989149a-839f-4551-b151-52925749b9d9.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/eda9fd65-c292-412e-b5b3-c6cac77c52d3.jpg",
+      "https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/dd0ed29e-0a5e-4b8b-b2ba-58a3079535d7.jpg",
+    ],
   },
 ]
 
