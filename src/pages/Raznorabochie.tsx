@@ -80,7 +80,7 @@ export default function Raznorabochie() {
       <div className="container pt-4">
 
         {/* Hero — как на главной */}
-        <section className="card my-8 relative shadow-md" style={{ minHeight: "380px", overflow: "visible" }}>
+        <section className="card mt-16 mb-8 relative shadow-md" style={{ minHeight: "380px", overflow: "visible" }}>
           <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start min-h-[380px]">
             <div className="w-full md:w-3/5 z-10">
               <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
