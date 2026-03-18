@@ -80,8 +80,8 @@ export default function Raznorabochie() {
       <div className="container pt-4">
 
         {/* Hero — как на главной */}
-        <section className="card my-8 relative overflow-hidden shadow-md">
-          <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
+        <section className="card my-8 relative overflow-hidden shadow-md" style={{ minHeight: "380px" }}>
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start min-h-[380px]">
             <div className="w-full md:w-3/5 z-10">
               <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
                 Разнорабочие
@@ -101,11 +101,12 @@ export default function Raznorabochie() {
                 </a>
               </div>
             </div>
-            <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
+            <div className="hidden md:flex md:w-1/2 md:absolute md:right-0 md:top-0 md:bottom-0 items-end justify-end">
               <img
                 src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2f03ef38-20e1-4bb1-8389-91882a0c9cf2.png"
                 alt="Разнорабочие"
-                className="w-full h-auto md:h-full md:w-auto md:object-contain md:object-center"
+                className="w-full h-auto object-contain object-bottom"
+                style={{ maxHeight: "none" }}
               />
             </div>
           </div>
