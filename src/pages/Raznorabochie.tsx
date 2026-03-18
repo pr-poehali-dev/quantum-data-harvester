@@ -103,7 +103,7 @@ export default function Raznorabochie() {
             </div>
             <div className="hidden md:flex md:w-1/2 md:absolute md:right-0 md:top-0 md:bottom-0 items-stretch justify-end">
               <img
-                src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2f03ef38-20e1-4bb1-8389-91882a0c9cf2.png"
+                src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c40c02da-3f94-4c30-8740-dbd75c215c9b.png"
                 alt="Разнорабочие"
                 className="w-full h-full object-contain object-center"
               />
