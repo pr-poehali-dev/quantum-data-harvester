@@ -3,6 +3,13 @@ import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviews = [
+  { name: "Игорь В.", date: "20 января 2025", rating: 5, text: "Помогали с переездом — грузчики отличные, аккуратные. Диван на 5-й этаж без лифта занесли без единой царапины. Цена адекватная." },
+  { name: "Екатерина М.", date: "5 марта 2025", rating: 5, text: "Заказывали 2 грузчиков для переезда офиса. Всю технику упаковали и перенесли бережно, работали быстро. Рекомендую!" },
+  { name: "Дмитрий С.", date: "18 февраля 2025", rating: 5, text: "Вынесли старую мебель и строительный мусор после ремонта. Чисто, оперативно, без нареканий. Обращусь снова." },
+]
 
 const tasks = [
   { icon: "Truck", title: "Переезды квартир", desc: "Полный переезд под ключ: упаковка, вынос, погрузка, разгрузка" },
@@ -163,6 +170,8 @@ export default function Gruzchiki() {
             </div>
           </div>
         </section>
+
+        <ServiceReviews reviews={reviews} />
 
         {/* FAQ */}
         <section className="my-20">

@@ -3,6 +3,13 @@ import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviews = [
+  { name: "Ольга Д.", date: "10 марта 2025", rating: 5, text: "Вызывала электрика — нужно было разобраться с проводкой после ремонта. Всё объяснил, сделал быстро и безопасно. Рекомендую!" },
+  { name: "Михаил П.", date: "25 января 2025", rating: 5, text: "Заменили щиток и проложили новую проводку в квартире. Работа аккуратная, штробы заделали за собой. Всё работает отлично." },
+  { name: "Наталья Ф.", date: "8 февраля 2025", rating: 5, text: "Установили розетки и люстры после ремонта. Приехали в тот же день, справились быстро. Очень вежливые мастера." },
+]
 
 const works = [
   { icon: "Zap", title: "Монтаж проводки", desc: "Разводка кабеля в квартирах, домах, офисах. Скрытая и открытая прокладка" },
@@ -470,6 +477,8 @@ export default function Elektrika() {
             ))}
           </div>
         </section>
+
+        <ServiceReviews reviews={reviews} />
 
         {/* FAQ */}
         <section className="my-20">

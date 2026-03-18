@@ -3,6 +3,13 @@ import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviews = [
+  { name: "Наталья К.", date: "25 марта 2025", rating: 5, text: "Мастер на час — починил дверной замок и повесил карнизы. Быстро, качественно, без лишних вопросов. Очень удобный сервис!" },
+  { name: "Андрей Л.", date: "12 февраля 2025", rating: 5, text: "Повесили телевизор на стену и люстру. Мастер приехал быстро, всё сделал аккуратно, проводку спрятал. Доволен!" },
+  { name: "Светлана В.", date: "3 января 2025", rating: 5, text: "Собирал шкаф и кровать IKEA. Работал аккуратно, ничего не сломал. Взял всё под ключ. Буду обращаться ещё." },
+]
 
 const tasks = [
   { icon: "Drill", title: "Повесить на стену", desc: "Телевизор, картину, карниз, полку, зеркало — надёжно на любую стену" },
@@ -243,6 +250,8 @@ export default function MasterNaChas() {
             ))}
           </div>
         </section>
+
+        <ServiceReviews reviews={reviews} />
 
         {/* FAQ */}
         <section className="my-20">

@@ -3,6 +3,13 @@ import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviews = [
+  { name: "Сергей Т.", date: "1 февраля 2025", rating: 5, text: "Вызывал разнорабочих для демонтажа перегородки. Работали слаженно, мусор вынесли сами. Всё чисто и в срок." },
+  { name: "Анна Б.", date: "14 марта 2025", rating: 5, text: "Помогли убраться на участке — покосили траву, вывезли хлам. Приехали вовремя, сделали быстро. Очень довольна!" },
+  { name: "Павел Р.", date: "22 января 2025", rating: 5, text: "Заказывал погрузку мебели при переезде. Ребята аккуратные, диван и шкаф не поцарапали. Цена адекватная." },
+]
 
 const tasks = [
   { icon: "PackageOpen", title: "Погрузка и разгрузка", desc: "Мебель, техника, стройматериалы — аккуратно и быстро" },
@@ -163,6 +170,8 @@ export default function Raznorabochie() {
             </div>
           </div>
         </section>
+
+        <ServiceReviews reviews={reviews} />
 
         {/* FAQ — как на главной */}
         <section className="my-20">

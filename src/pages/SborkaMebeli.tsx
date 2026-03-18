@@ -3,6 +3,13 @@ import Header from "@/components/landing/Header"
 import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviews = [
+  { name: "Марина С.", date: "3 марта 2025", rating: 5, text: "Собирали кухонный гарнитур. Мастер Дмитрий — просто золотые руки! Всё собрал быстро, чисто убрал за собой. Обязательно обращусь снова." },
+  { name: "Татьяна О.", date: "17 января 2025", rating: 5, text: "Собрали шкаф-купе из Hoff. Приехали вовремя, за 3 часа всё готово. Качество отличное, всё ровно, двери ходят плавно." },
+  { name: "Роман Ш.", date: "28 февраля 2025", rating: 5, text: "Заказывал сборку детской комнаты — кровать, стол, шкаф. Мастер аккуратный, ребёнок доволен. Рекомендую МастерОФФ!" },
+]
 
 const services = [
   { icon: "DoorOpen", title: "Шкафы-купе", desc: "Сборка шкафов-купе любой сложности — корпус, направляющие, двери, зеркала" },
@@ -247,6 +254,8 @@ export default function SborkaMebeli() {
             </a>
           </div>
         </section>
+
+        <ServiceReviews reviews={reviews} />
 
         {/* FAQ */}
         <section className="my-20">

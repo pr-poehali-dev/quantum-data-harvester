@@ -4,6 +4,13 @@ import Footer from "@/components/landing/Footer"
 import TelegramFloat from "@/components/landing/TelegramFloat"
 import Icon from "@/components/ui/icon"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import ServiceReviews from "@/components/landing/ServiceReviews"
+
+const reviewsData = [
+  { name: "Алексей М.", date: "15 февраля 2025", rating: 5, text: "Заказывал ремонт ванной комнаты. Мастера приехали вовремя, всё сделали аккуратно и в срок. Плитка лежит идеально, никаких щелей." },
+  { name: "Ольга Н.", date: "3 марта 2025", rating: 5, text: "Делали косметический ремонт в двушке. Очень довольна результатом — качество на высоком уровне, сроки соблюдены, цена честная." },
+  { name: "Виктор К.", date: "10 января 2025", rating: 5, text: "Выравнивали стены и делали стяжку под ключ. Бригада профессиональная, объект сдали вовремя. Однозначно рекомендую!" },
+]
 
 const works = [
   { icon: "Layers", title: "Демонтажные работы", desc: "Снос перегородок, демонтаж стяжки, плитки, старых покрытий и отделки" },
@@ -405,6 +412,8 @@ export default function RemontKvartir() {
             ))}
           </div>
         </section>
+
+        <ServiceReviews reviews={reviewsData} />
 
         {/* FAQ */}
         <section className="my-20">
