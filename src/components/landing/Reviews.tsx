@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const reviews = [
   { name: "Алексей М.", date: "15 февраля 2025", rating: 5, text: "Заказывал ремонт ванной комнаты. Мастера приехали вовремя, всё сделали аккуратно и в срок. Плитка лежит идеально, никаких щелей.", service: "Ремонт квартир" },
   { name: "Марина С.", date: "3 марта 2025", rating: 5, text: "Собирали кухонный гарнитур. Мастер Дмитрий — просто золотые руки! Всё собрал быстро, чисто убрал за собой. Обязательно обращусь снова.", service: "Сборка мебели" },
@@ -53,6 +55,9 @@ function StarRating({ rating, size = 18 }: { rating: number; size?: number }) {
 }
 
 export default function Reviews() {
+  const [showAll, setShowAll] = useState(false)
+  const visible = showAll ? reviews : reviews.slice(0, 9)
+
   return (
     <section className="py-16">
       <div className="text-center mb-10">
@@ -68,7 +73,7 @@ export default function Reviews() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {reviews.map((review, i) => (
+        {visible.map((review, i) => (
           <div key={i} className="card p-5 flex flex-col gap-3">
             <div className="flex items-start justify-between">
               <div>
@@ -82,6 +87,17 @@ export default function Reviews() {
           </div>
         ))}
       </div>
+
+      {!showAll && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAll(true)}
+            className="btn-secondary text-black dark:text-white inline-flex items-center gap-2 px-6 py-3"
+          >
+            Показать ещё отзывы ({reviews.length - 9} из 200)
+          </button>
+        </div>
+      )}
     </section>
   )
 }
