@@ -101,11 +101,12 @@ export default function Raznorabochie() {
                 </a>
               </div>
             </div>
-            <div className="hidden md:flex md:w-1/2 md:absolute md:right-0 md:top-0 md:bottom-0 items-stretch justify-end">
+            <div className="hidden md:flex md:w-1/2 md:absolute md:right-0 md:top-0 md:bottom-0 items-end justify-end overflow-hidden">
               <img
-                src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/c40c02da-3f94-4c30-8740-dbd75c215c9b.png"
+                src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/332bcdb1-acbc-4888-a1d2-0325ff88efb1.png"
                 alt="Разнорабочие"
-                className="w-full h-full object-contain object-center"
+                className="w-full object-contain object-bottom"
+                style={{ height: "130%", marginBottom: "-2px" }}
               />
             </div>
           </div>
