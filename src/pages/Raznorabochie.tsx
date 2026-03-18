@@ -103,9 +103,9 @@ export default function Raznorabochie() {
             </div>
             <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
               <img
-                src="/purple-circle-wave-static.png"
-                alt="Purple Wave"
-                className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
+                src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/2f03ef38-20e1-4bb1-8389-91882a0c9cf2.png"
+                alt="Разнорабочие"
+                className="w-full h-auto md:h-full md:w-auto md:object-contain md:object-center"
               />
             </div>
           </div>
