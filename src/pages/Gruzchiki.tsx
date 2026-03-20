@@ -80,7 +80,7 @@ export default function Gruzchiki() {
       <div className="container pt-4">
 
         {/* Hero */}
-        <section className="card my-8 relative overflow-hidden shadow-md">
+        <section className="card my-8 relative shadow-md" style={{ overflow: "visible" }}>
           <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
             <div className="w-full md:w-3/5 z-10">
               <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
@@ -101,12 +101,8 @@ export default function Gruzchiki() {
                 </a>
               </div>
             </div>
-            <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
-              <img
-                src="/purple-circle-wave-static.png"
-                alt="Purple Wave"
-                className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
-              />
+            <div className="hidden md:block md:absolute md:right-0 md:bottom-0" style={{ width: "42%", top: "-180px" }}>
+              <img src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a5921613-2c73-4d29-86cc-0151aacd320d.png" alt="Менеджер" className="w-full h-full object-contain object-top" />
             </div>
           </div>
         </section>
