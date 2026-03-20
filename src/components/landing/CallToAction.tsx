@@ -34,7 +34,7 @@ export default function CallToAction() {
           </div>
         </div>
 
-        <div className="hidden md:block md:absolute md:right-0 md:bottom-0" style={{ width: "42%", top: "-100px" }}>
+        <div className="hidden md:block md:absolute md:right-0 md:bottom-0" style={{ width: "42%", top: "-180px" }}>
           <img
             src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a5921613-2c73-4d29-86cc-0151aacd320d.png"
             alt="Менеджер"
