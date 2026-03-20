@@ -2,7 +2,7 @@ import Icon from "@/components/ui/icon"
 
 export default function CallToAction() {
   return (
-    <section id="contact" className="card my-20 relative overflow-hidden shadow-md">
+    <section id="contact" className="card my-20 relative shadow-md" style={{ overflow: "visible" }}>
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         <div className="w-full md:w-3/5 z-10">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
@@ -34,11 +34,11 @@ export default function CallToAction() {
           </div>
         </div>
 
-        <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
+        <div className="hidden md:block md:absolute md:right-0 md:bottom-0" style={{ width: "42%", top: "-40px" }}>
           <img
-            src="/purple-circle-wave-static.png"
-            alt="Purple Wave"
-            className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
+            src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/a5921613-2c73-4d29-86cc-0151aacd320d.png"
+            alt="Менеджер"
+            className="w-full h-full object-contain object-top"
           />
         </div>
       </div>
