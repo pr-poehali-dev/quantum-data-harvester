@@ -20,11 +20,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:block md:w-2/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:flex md:items-center">
+        <div className="hidden md:block md:absolute md:right-0 md:top-0 md:bottom-0" style={{ width: "45%" }}>
           <img
-            src="/purple-circle-wave-static.png"
-            alt="Purple Wave"
-            className="w-full h-auto md:h-full md:w-auto md:object-cover md:object-left"
+            src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/1433e198-55f7-470f-9b5c-eb8096e390d5.png"
+            alt="Разнорабочие"
+            className="w-full h-full object-contain object-bottom"
           />
         </div>
       </div>
