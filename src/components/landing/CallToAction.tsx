@@ -2,7 +2,7 @@ import Icon from "@/components/ui/icon"
 
 export default function CallToAction() {
   return (
-    <section id="contact" className="card my-20 relative shadow-md" style={{ overflow: "visible" }}>
+    <section id="contact" className="card mb-20 mt-40 relative shadow-md" style={{ overflow: "visible" }}>
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         <div className="w-full md:w-3/5 z-10">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
