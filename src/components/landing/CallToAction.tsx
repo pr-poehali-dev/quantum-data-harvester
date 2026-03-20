@@ -6,8 +6,7 @@ export default function CallToAction() {
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         <div className="w-full md:w-3/5 z-10">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
-            Нужен мастер? <span className="text-[#7A7FEE] dark:text-[#7A7FEE]">
-Звоните</span> прямо сейчас
+            Нужен мастер?<br /><span className="text-[#7A7FEE] dark:text-[#7A7FEE]">Звоните прямо сейчас</span>
           </h2>
           <p className="my-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
             Работаем по всему Иркутску. Выезд мастера на оценку — бесплатно.
