@@ -2,7 +2,7 @@ import ContactFormButton from "./ContactFormButton"
 
 export default function Hero() {
   return (
-    <section id="hero" className="card my-8 relative overflow-hidden shadow-md">
+    <section id="hero" className="card my-8 relative shadow-md" style={{ overflow: "visible" }}>
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         <div className="w-full md:w-3/5 z-10">
           <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
@@ -20,11 +20,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:block md:absolute md:right-0 md:top-0 md:bottom-0" style={{ width: "52%" }}>
+        <div className="hidden md:block md:absolute md:right-0 md:bottom-0" style={{ width: "52%", top: "-40px" }}>
           <img
             src="https://cdn.poehali.dev/projects/00eabb41-cd43-402b-855a-9ee2fb26e229/bucket/1433e198-55f7-470f-9b5c-eb8096e390d5.png"
             alt="Разнорабочие"
-            className="w-full h-full object-contain object-bottom"
+            className="w-full h-full object-contain object-top"
           />
         </div>
       </div>
